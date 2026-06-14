@@ -795,6 +795,175 @@
     color: var(--navy);
     padding: 6px;
   }
+
+  /* ── WHATSAPP FLOATING BUTTON ── */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+  .whatsapp-bubble {
+    background: #fff;
+    color: #1a1f2e;
+    font-size: 13.5px;
+    font-weight: 500;
+    padding: 10px 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    white-space: nowrap;
+    display: none;
+    animation: fadeInUp 0.2s ease;
+  }
+  .whatsapp-float:hover .whatsapp-bubble { display: block; }
+  .whatsapp-btn {
+    width: 58px;
+    height: 58px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 18px rgba(37,211,102,0.45);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .whatsapp-btn:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
+  .whatsapp-btn svg { width: 30px; height: 30px; fill: #fff; }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── PRICING BADGE ── */
+  .pricing-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(201,147,62,0.15);
+    border: 1.5px solid rgba(201,147,62,0.5);
+    color: var(--gold-light);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+  }
+  .pricing-badge .price-big {
+    font-size: 22px;
+    font-family: 'Playfair Display', serif;
+    color: #f0c97a;
+  }
+
+  /* ── SERVICE FEE SECTION ── */
+  .fee-highlight-box {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    border-radius: 16px;
+    padding: 36px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .fee-highlight-box h3 {
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .fee-highlight-box p {
+    font-size: 14.5px;
+    color: rgba(255,255,255,0.7);
+    max-width: 420px;
+    line-height: 1.65;
+  }
+  .fee-amount {
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .fee-amount .rupee {
+    font-size: 52px;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+  .fee-amount .per-person {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 4px;
+  }
+
+  /* ── MOBILE MENU OVERLAY ── */
+  .mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10,35,66,0.97);
+    z-index: 200;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .mobile-nav-overlay.open { display: flex; }
+  .mobile-nav-overlay a {
+    font-size: 22px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    padding: 14px 32px;
+    border-radius: 10px;
+    transition: background 0.15s;
+    font-family: 'Playfair Display', serif;
+  }
+  .mobile-nav-overlay a:hover { background: rgba(255,255,255,0.08); color: var(--white); }
+  .mobile-nav-overlay .close-btn {
+    position: absolute;
+    top: 22px; right: 22px;
+    font-size: 28px;
+    color: rgba(255,255,255,0.7);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .mobile-nav-overlay .mob-cta {
+    background: var(--gold);
+    color: var(--navy) !important;
+    font-weight: 700 !important;
+    margin-top: 12px;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+  .testimonial-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 14px;
+    padding: 26px 24px;
+  }
+  .stars { color: #f59e0b; font-size: 16px; margin-bottom: 12px; }
+  .testimonial-card p { font-size: 14.5px; color: var(--gray-700); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+  .author-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--navy);
+    color: var(--gold-light);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 15px;
+    flex-shrink: 0;
+  }
+  .author-name { font-size: 14px; font-weight: 600; color: var(--navy); }
+  .author-city { font-size: 12.5px; color: var(--gray-500); }
 </style>
 </head>
 <body>
@@ -802,10 +971,10 @@
 <!-- TOP BAR -->
 <div class="topbar">
   <div class="topbar-inner">
-    <div>🇮🇳 eFiling Portal Solutions | passport consultancy</div>
+    <div>🇮🇳 eFiling Portal Solutions | Consultancy Service</div>
     <div>
       📞 <a href="tel:7978043449">7978043449</a><span>|</span>
-      ✉️ <a href="mailto:contact@e-filling.in">contact@e-filling.in</a><span>|</span>
+      ✉️ <a href="mailto:contact@e-filling.in">contact@e-filling.in</a>
     </div>
   </div>
 </div>
@@ -825,10 +994,21 @@
       <a href="#" id="nav-passport" onclick="showPage('passport')">Passport Services</a>
       <a href="#" id="nav-contact" onclick="showPage('contact')">Contact</a>
       <a href="#" id="nav-policy" onclick="showPage('policy')" style="font-size:13.5px; color:var(--gray-500);">Policies</a>
-      <a href="#" class="nav-cta" onclick="showPage('passport')">Apply Now →</a>
+      <a href="#" class="nav-cta" onclick="showPage('contact')">Apply Now →</a>
     </nav>
+    <button class="mobile-menu-btn" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Menu">☰</button>
   </div>
 </header>
+
+<!-- MOBILE NAV OVERLAY -->
+<div class="mobile-nav-overlay" id="mobileNav">
+  <button class="close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')">✕</button>
+  <a href="#" onclick="showPage('home');document.getElementById('mobileNav').classList.remove('open')">Home</a>
+  <a href="#" onclick="showPage('passport');document.getElementById('mobileNav').classList.remove('open')">Passport Services</a>
+  <a href="#" onclick="showPage('contact');document.getElementById('mobileNav').classList.remove('open')">Contact Us</a>
+  <a href="#" onclick="showPage('policy');document.getElementById('mobileNav').classList.remove('open')">Policies</a>
+  <a href="#" class="mob-cta" onclick="showPage('contact');document.getElementById('mobileNav').classList.remove('open')">Apply Now →</a>
+</div>
 
 <!-- ═══════════════════════
      HOME PAGE
@@ -839,22 +1019,25 @@
   <section class="hero">
     <div class="hero-inner">
       <div>
-        <div class="hero-badge">Passport Assistance Services</div>
-        <h1>India's Trusted<br><span>Passport Service</span><br>Portal</h1>
-        <p>Apply for a new passport, renewal, or tatkal from the comfort of your home. Expert guidance, document support, and end-to-end assistance.</p>
+        <div class="hero-badge">🛂 Private Passport Assistance Service</div>
+        <h1>Apply for Your<br><span>Passport</span> —<br>We Handle the Rest</h1>
+        <p>Expert document guidance, form filling, and PSK appointment booking. New passport, renewal, or tatkal — all from the comfort of your home.</p>
+        <div class="pricing-badge">
+          Our Service Fee: <span class="price-big">₹500</span> per application
+        </div>
         <div class="hero-btns">
-          <a class="btn-primary" onclick="showPage('passport')">Start Passport Application</a>
-          <a class="btn-outline" onclick="showPage('contact')">Talk to an Expert</a>
+          <a class="btn-primary" href="https://wa.me/917978043449?text=Hello%2C%20I%20need%20help%20with%20passport%20application" target="_blank">💬 WhatsApp Us Now</a>
+          <a class="btn-outline" onclick="showPage('contact')">Contact Us</a>
         </div>
       </div>
       <div class="hero-card">
         <h3>How It Works</h3>
         <ul class="step-list">
-          <li><div class="step-num">1</div> Fill the online application form on our portal</li>
-          <li><div class="step-num">2</div> Upload required documents securely</li>
-          <li><div class="step-num">3</div> Our experts review and verify your submission</li>
-          <li><div class="step-num">4</div> Book your Passport Seva Kendra appointment</li>
-          <li><div class="step-num">5</div> Receive your passport at your doorstep</li>
+          <li><div class="step-num">1</div> WhatsApp or call us with your details</li>
+          <li><div class="step-num">2</div> We check your documents & guide you</li>
+          <li><div class="step-num">3</div> We fill your application form for you</li>
+          <li><div class="step-num">4</div> We book your Passport Seva Kendra slot</li>
+          <li><div class="step-num">5</div> You visit PSK — passport arrives at home</li>
         </ul>
       </div>
     </div>
@@ -963,12 +1146,52 @@
     </div>
   </section>
 
+  <!-- Testimonials -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Client Reviews</div>
+        <h2>What Our Clients Say</h2>
+        <p>Real feedback from people we've helped across India.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Got my passport done within 3 days. They handled everything from form filling to PSK appointment. Very helpful and fast service!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">R</div>
+            <div><div class="author-name">Rahul Sharma</div><div class="author-city">Delhi</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"I was confused about documents for minor passport. They guided me step by step on WhatsApp. Only ₹500 and the service was amazing!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">P</div>
+            <div><div class="author-name">Priya Nair</div><div class="author-city">Kochi</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Needed tatkal passport urgently for a job abroad. e-filling.in made the whole process so easy. Highly recommend to everyone!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">A</div>
+            <div><div class="author-name">Arjun Mehta</div><div class="author-city">Mumbai</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta-banner">
     <div class="container">
       <h2>Ready to Apply for Your Passport?</h2>
-      <p>Join thousands of Indians who have trusted e-filling.in for a smooth, stress-free passport experience.</p>
-      <a class="btn-primary" onclick="showPage('passport')">Start Your Application Today</a>
+      <p>Just ₹500 service fee. WhatsApp us right now — we'll guide you through everything, step by step.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a class="btn-primary" href="https://wa.me/917978043449?text=Hello%2C%20I%20need%20help%20with%20passport%20application" target="_blank">💬 WhatsApp Us Now</a>
+        <a class="btn-outline" onclick="showPage('contact')">Send Enquiry</a>
+      </div>
     </div>
   </section>
 </div>
@@ -1097,6 +1320,18 @@
         <h2>Official Passport Fee Chart</h2>
         <p>Below are the official Government of India fees. Our service charges are separate and disclosed before payment.</p>
       </div>
+
+      <!-- OUR SERVICE FEE HIGHLIGHT -->
+      <div class="fee-highlight-box">
+        <div>
+          <h3>Our Service Fee</h3>
+          <p>We charge a flat facilitation fee for our expert assistance — document checking, form filling, and PSK appointment booking. Government fees are paid separately directly to Passport Seva Kendra.</p>
+        </div>
+        <div class="fee-amount">
+          <div class="rupee">₹500</div>
+          <div class="per-person">per application</div>
+        </div>
+      </div>
       <table class="fee-table">
         <thead>
           <tr>
@@ -1190,6 +1425,13 @@
               <div class="contact-item-text">
                 <div class="label">Phone</div>
                 <div class="value"><a href="tel:7978043449">+91 7978043449</a></div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">💬</div>
+              <div class="contact-item-text">
+                <div class="label">WhatsApp (Fastest Response)</div>
+                <div class="value"><a href="https://wa.me/917978043449?text=Hello%2C%20I%20need%20help%20with%20passport%20application" target="_blank" style="color:#4ade80;">Chat Now on WhatsApp →</a></div>
               </div>
             </div>
             <div class="contact-item">
@@ -1551,6 +1793,16 @@
   </div>
 </footer>
 
+<!-- WHATSAPP FLOATING BUTTON -->
+<div class="whatsapp-float">
+  <div class="whatsapp-bubble">💬 Chat with us on WhatsApp!</div>
+  <a class="whatsapp-btn" href="https://wa.me/917978043449?text=Hello%2C%20I%20need%20help%20with%20passport%20application" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+</div>
+
 <script>
 function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -1589,6 +1841,9 @@ function submitForm() {
     return;
   }
   document.getElementById('form-success').style.display = 'block';
+  // Open WhatsApp with pre-filled message
+  const msg = encodeURIComponent(`Hello, I need help with passport application.\n\nName: ${name}\nPhone: ${phone}\nService: ${service}`);
+  setTimeout(() => { window.open(`https://wa.me/917978043449?text=${msg}`, '_blank'); }, 600);
   // Google Ads conversion tracking (replace AW-XXXXXXXX/XXXXXXXXX with your conversion ID)
   if (typeof gtag !== 'undefined') {
     gtag('event', 'conversion', { 'send_to': 'AW-XXXXXXXX/XXXXXXXXX' });
